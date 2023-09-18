@@ -1,0 +1,63 @@
+[[main]]
+  identifier = "more"
+  name = "工具箱"
+  pre = '<i class="fas fa-tools"></i>'
+  weight = 1
+
+# [[main]]
+#   identifier = "umami"
+#   name = "实时访客"
+#   pre = '<i class="fas fa-chart-line"></i>'
+#   url = "https://umami.fuckcloudnative.io/share/czt8lZ3q/%E4%BA%91%E5%8E%9F%E7%94%9F%E5%AE%9E%E9%AA%8C%E5%AE%A4"
+#   weight = 2
+
+[[main]]
+  identifier = "about"
+  name = "关于我"
+  pre = '<i class="fas fa-user-graduate"></i>'
+  url = "about/"
+  weight = 5
+
+[[main]]
+  identifier = "friends"
+  name = "友链"
+  pre = '<i class="fas fa-user-friends"></i>'
+  url = "friends/"
+  weight = 7
+
+[[main]]
+  identifier = "archive"
+  name = "归档"
+  pre = '<i class="fas fa-archive"></i>'
+  url = "archive/"
+  weight = 9
+
+[[main]]
+ identifier = "posts"
+ name = "文章"
+ pre = '<i class="fab fa-docker"></i>'
+ url = "posts/"
+ weight = 11
+
+[[main]]
+ parent = "posts"
+ name = "技术"
+ url = "tech/"
+
+[[main]]
+ parent = "posts"
+ name = "生活"
+ url = "life/"
+
+[[main]]
+  identifier = "showcase"
+  name = "开源项目"
+  pre = '<i class="fab fa-github"></i>'
+  url = "showcase/"
+  weight = 13
+
+# [[main]]
+#   identifier = "books"
+#   name = "电子书"
+#   pre = '<i class="fas fa-book"></i>'
+#   weight = 15
