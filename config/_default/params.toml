@@ -20,7 +20,7 @@ enablePinnedPosts = true
 minItemsToShowInTagCloud = 1 # Minimum items to show in tag cloud
 
 # appbar
-enableAppbarSearchIcon = false
+enableAppbarSearchIcon = true
 enableAppbarLangIcon = false
 
 # header
@@ -63,7 +63,7 @@ typeIcon = "🎯"
 myname = "Coconut🥥"
 email = "sherlockx21@163.com"
 whoami = "The road is far away, but you are worth it."
-bioImageUrl = ""
+bioImageUrl = "https://sherlockblogpic-1314274876.cos.ap-shanghai.myqcloud.com/zzoblog/avatar.jpg?q-sign-algorithm=sha1&q-ak=AKIDey4Ra00sHrG-TyLyqafRyTzQ207MRt6XMVSsKSXiak3QR8V9NEiJVV16kxcTz-gY&q-sign-time=1695061608;1695065208&q-key-time=1695061608;1695065208&q-header-list=host&q-url-param-list=ci-process&q-signature=604778580330abe0ae5819c5aed09417733fd72e&x-cos-security-token=cf2ZKYvBZnyd6MhqEdbPGmhcDdcGULya84d4ee08615611a76058739cf9063e46Ai-g8sbk1J3yP4Ov-R5ZCb34Wf2HR8xAr6oinSxfwkC155USx0b2ymlsdz8GDrSJbKHOEdvcqSGkF1WHCl4FnN3EgHdg884omvfD8VoUYJXgHMgNVR74qReNDZhK28C6ksNX9fihyNFpxqAi_xZija0UeLhxLpOBD6E-Od7XiTDOKufPwiNisRVTdT0jiS9Y&ci-process=originImage"
 useGravatar = false
 location = "Hangzhou,Zhejiang,China"
 organization = "HDU"
