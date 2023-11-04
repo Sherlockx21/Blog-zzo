@@ -2,9 +2,9 @@
 header:
   - type: typewriter
     methods:
-      - typeString: Hi There,I am <strong>Coconut!</strong>
+      - typeString: Hi There,I am <strong>椰虂serein!</strong>
       - pauseFor: 2500
-      - deleteChars: 22
+      - deleteChars: 24
       - typeString: I am also a <strong>Gopher!</strong>
       - pauseFor: 2500
       - deleteChars: 20

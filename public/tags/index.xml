@@ -6,14 +6,15 @@
   xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" 
   xmlns:media="http://search.yahoo.com/mrss/">
   <channel>
-    <title>Tags on 🥥‘s Blog</title>
+    <title>Tags on 椰虂飒冷</title>
     <link>https://example.org/tags/</link>
-    <description>Recent content in Tags on 🥥‘s Blog</description>
+    <description>Recent content in Tags on 椰虂飒冷</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
-    <managingEditor>sherlockx21@163.com (Coconut🥥)</managingEditor>
-    <webMaster>sherlockx21@163.com (Coconut🥥)</webMaster>
+    <managingEditor>sherlockx21@163.com (椰虂serein)</managingEditor>
+    <webMaster>sherlockx21@163.com (椰虂serein)</webMaster>
     <copyright>&amp;copy;{year} Created by [Coconut](link),All Rights Reserved</copyright>
+    <lastBuildDate>Thu, 02 Nov 2023 11:12:11 +0800</lastBuildDate>
     <sy:updatePeriod>daily</sy:updatePeriod>
     
         <atom:link href="https://example.org/tags/index.xml" rel="self" type="application/rss+xml" />
@@ -22,6 +23,42 @@
     
 
       
+      
+      <item>
+        <title>MIT</title>
+        <link>https://example.org/tags/mit/</link>
+        <pubDate>Thu, 02 Nov 2023 11:12:11 +0800</pubDate>
+        <author>sherlockx21@163.com (椰虂serein)</author>
+        
+        <guid>https://example.org/tags/mit/</guid>
+        <description></description>
+        <content:encoded></content:encoded>
+        <dc:creator>椰虂serein</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>Raft</title>
+        <link>https://example.org/tags/raft/</link>
+        <pubDate>Thu, 02 Nov 2023 11:12:11 +0800</pubDate>
+        <author>sherlockx21@163.com (椰虂serein)</author>
+        
+        <guid>https://example.org/tags/raft/</guid>
+        <description></description>
+        <content:encoded></content:encoded>
+        <dc:creator>椰虂serein</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
       
 
     

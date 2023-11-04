@@ -6,9 +6,9 @@
   xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" 
   xmlns:media="http://search.yahoo.com/mrss/">
   <channel>
-    <title>椰虂飒冷</title>
-    <link>https://example.org/</link>
-    <description>Recent content on 椰虂飒冷</description>
+    <title>Posts on 椰虂飒冷</title>
+    <link>https://example.org/posts/</link>
+    <description>Recent content in Posts on 椰虂飒冷</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <managingEditor>sherlockx21@163.com (椰虂serein)</managingEditor>
@@ -17,31 +17,10 @@
     <lastBuildDate>Thu, 02 Nov 2023 11:12:11 +0800</lastBuildDate>
     <sy:updatePeriod>daily</sy:updatePeriod>
     
-        <atom:link href="https://example.org/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://example.org/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     
-      
-      
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
 
       
       
