@@ -138,7 +138,7 @@ A1：首先要明确，当一个节点断联的时候，节点本身不一定是
 
 拉票是整个选举的核心内容，决定了每个节点的角色。整个过程主要会出现下列几种情况：
 
-1. 拉票者（发送者）任期过期
+1. Candidate（发送者）任期过期，拒绝投票
 
    ```go
    if args.Term < rf.currentTerm {
@@ -147,6 +147,77 @@ A1：首先要明确，当一个节点断联的时候，节点本身不一定是
    }
    ```
 
-2. 
+2. 接收者任期过期，跟新接收者任期
+   ```go
+   if args.Term > rf.currentTerm {
+		rf.currentTerm = args.Term
+		reply.Term = rf.currentTerm
+		rf.votedFor = -1
+		rf.state = Follower
+   }
+   ```
+3. 两者任期相同，此时要求Candidate的日志和接收者一样新（具体表现为Candidate最后一条日志任期比接收者更大或者在任期相同的情况下日志索引更大）
+   ```go
+   update := false
+	update = update || args.LastLogTerm > rf.getLastLogTerm()
+	update = update || args.LastLogTerm == rf.getLastLogTerm() && args.LastLogIndex >= rf.log.LastLogIndex
 
-### 发送日志
+	if (rf.votedFor == -1 || rf.votedFor == args.CandidateId) && update {
+		//竞选任期大于自身任期，则更新自身任期，并转为follower
+		rf.votedFor = args.CandidateId
+		rf.state = Follower
+		rf.resetElectionTimer() //自己的票已经投出,转为follower
+		rf.persist()
+	} else {
+		reply.VoteGranted = false
+	}
+	```
+> 这里的日志比较其实可以类比为文档，选取文档时，版本（日志的任期）更高的文档往往比版本低的更贴近于技术的更新，而在版本相同时，我们更趋向于选取内容更全（日志的索引）的文档作为参考。
+## Leader的任务
+Candidate与Follower节点的功能相对简单，接下来就是Leader的工作。Leader与Follower的交互主要包括发送心跳与日志消息。
+### 发送心跳
+心跳在分布式系统中的作用就是保证节点的活跃。在Raft算法中，心跳本质上是通过一个空的日志消息实现的。
+```go
+// 并发的向各个节点发送消息
+for i, _ := range rf.peers {
+	if i == rf.me {
+		continue
+	}
+	go rf.AppendEntries(i, heart)
+}
+```
+在AppendEntries函数中，首先要保证发送消息这个动作是原子性的，即不能被别的动作所打扰。这里利用go中的锁来实现。
+```go
+rf.mu.Lock()
+if rf.state != Leader {
+	rf.mu.Unlock() //必须解锁，否则会造成死锁
+	return
+}
+reply := AppendEntriesReply{}
+args := AppendEntriesArgs{}
+args.LeaderTerm = rf.currentTerm
+args.LeaderID = rf.me
+rf.mu.Unlock()
+```
+```go
+rf.mu.Lock()
+if rf.state != Leader {
+	rf.mu.Unlock()
+	return
+}
+// Follower任期落后，重置Follower状态，Leader不做特殊处理
+if reply.FollowerTerm < rf.currentTerm {
+	rf.mu.Unlock()
+	return
+}
+// Leader任期落后于Follower，因此Leader需转变为Follower并跟新任期
+if reply.FollowerTerm > rf.currentTerm {
+	rf.votedFor = -1
+	rf.state = Follower
+	rf.currentTerm = reply.FollowerTerm
+}
+rf.mu.Unlock()
+```
+### 发送日志消息
+发送日志消息的过程与上述发送心跳的实现基本一致，不过需要多一些判断条件
+
