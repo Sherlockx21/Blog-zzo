@@ -218,6 +218,87 @@ if reply.FollowerTerm > rf.currentTerm {
 }
 rf.mu.Unlock()
 ```
+对于接收者而言，处理心跳只有接受和拒绝两种方式
+
+```go
+func (rf *Raft) HandleHeartbeat(args *AppendEntriesArgs, reply *AppendEntriesReply) {
+	rf.mu.Lock()
+	defer rf.mu.Unlock()
+	reply.FollowerTerm = rf.currentTerm
+	reply.Success = true
+    //拒绝旧leader
+	if args.LeaderTerm < rf.currentTerm {
+		reply.Success = false
+		reply.FollowerTerm = rf.currentTerm
+		return
+	}
+	rf.resetElectionTimer()
+
+	//转变身份为Follower
+	rf.state = Follower
+	rf.votedFor = args.LeaderID
+	if args.LeaderTerm > rf.currentTerm {
+		rf.votedFor = -1
+		rf.currentTerm = args.LeaderTerm
+		reply.FollowerTerm = rf.currentTerm
+	}
+}
+
+```
+
 ### 发送日志消息
-发送日志消息的过程与上述发送心跳的实现基本一致，不过需要多一些判断条件
+
+发送日志消息的过程与上述发送心跳的实现基本一致，不过需要多一些对日志的讨论
+
+```go
+type AppendEntriesArgs struct {
+	LeaderTerm   int //leader 任期
+	LeaderID     int 
+	PrevLogIndex int //传递的日志的前一条日志下标
+	PrevLogTerm  int 
+	Entries      []Entry //日志信息
+	LeaderCommit int //leader提交的日志下标
+}
+
+type AppendEntriesReply struct {
+	FollowerTerm int //follower任期
+	Success      bool
+	PrevLogIndex int 
+	PrevLogTerm  int
+}
+```
+
+接收者对于日志消息的过程主要如下：
+
+`接收消息`-->`判断leader任期`-->`重置选举计时器`-->`判断自身任期`-->`更新日志`
+
+```go
+if args.LeaderTerm < rf.currentTerm {
+	reply.Success = false
+	return	
+}
+rf.resetElectionTimer()
+rf.state = Follower
+
+if args.LeaderTerm > rf.currentTerm {
+	rf.votedFor = -1
+	rf.currentTerm = args.LeaderTerm
+	reply.FollowerTerm = rf.currentTerm
+}
+```
+
+接下来讨论日志的复制：
+
+1. 需要复制的日志在自身日志范围外，直接拒绝复制日志
+
+   ```go
+   if args.PrevLogIndex+1 < rf.log.FirstLogIndex || args.PrevLogIndex > rf.log.LastLogIndex {
+   	reply.FollowerTerm = rf.currentTerm
+   	reply.Success = false
+   	reply.PrevLogIndex = rf.log.LastLogIndex
+   	reply.PrevLogTerm = rf.getLastLogTerm()
+   }
+   ```
+
+2. 
 
