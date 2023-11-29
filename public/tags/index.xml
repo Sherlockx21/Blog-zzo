@@ -7,17 +7,17 @@
   xmlns:media="http://search.yahoo.com/mrss/">
   <channel>
     <title>Tags on 椰虂飒冷</title>
-    <link>https://example.org/tags/</link>
+    <link>https://Sherlockx21.cn/tags/</link>
     <description>Recent content in Tags on 椰虂飒冷</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <managingEditor>sherlockx21@163.com (椰虂serein)</managingEditor>
     <webMaster>sherlockx21@163.com (椰虂serein)</webMaster>
     <copyright>&amp;copy;{year} Created by [Coconut](link),All Rights Reserved</copyright>
-    <lastBuildDate>Thu, 02 Nov 2023 11:12:11 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 14 Nov 2023 15:48:21 +0800</lastBuildDate>
     <sy:updatePeriod>daily</sy:updatePeriod>
     
-        <atom:link href="https://example.org/tags/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://Sherlockx21.cn/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     
@@ -25,30 +25,12 @@
       
       
       <item>
-        <title>MIT</title>
-        <link>https://example.org/tags/mit/</link>
-        <pubDate>Thu, 02 Nov 2023 11:12:11 +0800</pubDate>
+        <title>分布式</title>
+        <link>https://Sherlockx21.cn/tags/%E5%88%86%E5%B8%83%E5%BC%8F/</link>
+        <pubDate>Tue, 14 Nov 2023 15:48:21 +0800</pubDate>
         <author>sherlockx21@163.com (椰虂serein)</author>
         
-        <guid>https://example.org/tags/mit/</guid>
-        <description></description>
-        <content:encoded></content:encoded>
-        <dc:creator>椰虂serein</dc:creator>
-        
-        
-        
-        
-        
-        
-      </item>
-      
-      <item>
-        <title>Raft</title>
-        <link>https://example.org/tags/raft/</link>
-        <pubDate>Thu, 02 Nov 2023 11:12:11 +0800</pubDate>
-        <author>sherlockx21@163.com (椰虂serein)</author>
-        
-        <guid>https://example.org/tags/raft/</guid>
+        <guid>https://Sherlockx21.cn/tags/%E5%88%86%E5%B8%83%E5%BC%8F/</guid>
         <description></description>
         <content:encoded></content:encoded>
         <dc:creator>椰虂serein</dc:creator>

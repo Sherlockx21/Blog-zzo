@@ -39,15 +39,15 @@
  url = "posts/"
  weight = 11
 
-[[main]]
- parent = "posts"
- name = "技术"
- url = "tech/"
+# [[main]]
+#  parent = "posts"
+#  name = "技术"
+#  url = "posts/tech/"
 
-[[main]]
- parent = "posts"
- name = "生活"
- url = "life/"
+# [[main]]
+#  parent = "posts"
+#  name = "生活"
+#  url = "/posts/life/"
 
 [[main]]
   identifier = "showcase"
