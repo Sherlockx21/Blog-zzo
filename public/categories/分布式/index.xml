@@ -7,7 +7,7 @@
   xmlns:media="http://search.yahoo.com/mrss/">
   <channel>
     <title>分布式 on 椰虂飒冷</title>
-    <link>https://Sherlockx21.cn/categories/%E5%88%86%E5%B8%83%E5%BC%8F/</link>
+    <link>https://yaleserien.cn/categories/%E5%88%86%E5%B8%83%E5%BC%8F/</link>
     <description>Recent content in 分布式 on 椰虂飒冷</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
@@ -17,7 +17,7 @@
     <lastBuildDate>Thu, 11 Apr 2024 09:45:26 +0800</lastBuildDate>
     <sy:updatePeriod>daily</sy:updatePeriod>
     
-        <atom:link href="https://Sherlockx21.cn/categories/%E5%88%86%E5%B8%83%E5%BC%8F/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://yaleserien.cn/categories/%E5%88%86%E5%B8%83%E5%BC%8F/index.xml" rel="self" type="application/rss+xml" />
     
     
     
@@ -26,11 +26,11 @@
       
       <item>
         <title>分布式共识算法——Paxos</title>
-        <link>https://Sherlockx21.cn/posts/paxos/</link>
+        <link>https://yaleserien.cn/posts/paxos/</link>
         <pubDate>Thu, 11 Apr 2024 09:45:26 +0800</pubDate>
         <author>sherlockx21@163.com (椰虂serein)</author>
         <atom:modified>Thu, 11 Apr 2024 09:45:26 +0800</atom:modified>
-        <guid>https://Sherlockx21.cn/posts/paxos/</guid>
+        <guid>https://yaleserien.cn/posts/paxos/</guid>
         <description>本文为阶段学习成果记录，如有错误，欢迎指正 Paxos算法由 Leslie Lamport 于1990年提出，主要为了解决分布式系统中的共识问题。 什么是共识？ 分布式系统就</description>
         <content:encoded>&lt;blockquote&gt;
 &lt;p&gt;本文为阶段学习成果记录，如有错误，欢迎指正&lt;/p&gt;
